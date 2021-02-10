@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class SwitchCharacterScript : MonoBehaviour {
 
 	// referenses to controlled game objects
-	public GameObject avatar1, avatar2, lastLink, usb;
+	public GameObject avatar1, avatar2, liveLink, liveUsb, compLink, compUsb;
 	public Camera camera;
 	private CameraController cont;
 
@@ -33,8 +33,6 @@ public class SwitchCharacterScript : MonoBehaviour {
     // public method to switch avatars by pressing UI button
     public void SwitchAvatar()
 	{
-		ConfigurableJoint link = lastLink.GetComponent<ConfigurableJoint>();
-		ConfigurableJoint sc;
 		// processing whichAvatarIsOn variable
 		switch (whichAvatarIsOn) {
 
@@ -44,12 +42,17 @@ public class SwitchCharacterScript : MonoBehaviour {
 				// then the second avatar is on now
 				whichAvatarIsOn = 2;
 				cont.player = avatar2.gameObject;
-				usb.GetComponent<Rigidbody>().isKinematic = false;
-				lastLink.GetComponent<Rigidbody>().isKinematic = false;
 
-				// disable the first one and anable the second one
+
+				// disable the first one and enable the second one
 				avatar1.gameObject.SetActive (false);
 				avatar2.gameObject.SetActive (true);
+
+				//avatar2.transform.rotation = avatar1.transform.rotation;
+				//avatar2.transform.position = avatar1.transform.position;
+
+				liveUsb.GetComponent<ConfigurableJoint>().connectedBody = liveLink.GetComponent<Rigidbody>();
+				compUsb.GetComponent<ConfigurableJoint>().connectedBody = null;
 				break;
 			// if the second avatar is on
 			case 2:
@@ -58,13 +61,15 @@ public class SwitchCharacterScript : MonoBehaviour {
 				whichAvatarIsOn = 1;
 				cont.player = avatar1.gameObject;
 
-				usb.GetComponent<Rigidbody>().isKinematic = true;
-				lastLink.GetComponent<Rigidbody>().isKinematic = true;
-
-
-				// disable the second one and anable the first one
+				// disable the second one and enable the first one
 				avatar1.gameObject.SetActive (true);
 				avatar2.gameObject.SetActive (false);
+
+				//avatar1.transform.rotation = avatar2.transform.rotation;
+				//avatar1.transform.position = avatar2.transform.position;
+
+				liveUsb.GetComponent<ConfigurableJoint>().connectedBody = null;
+				compUsb.GetComponent<ConfigurableJoint>().connectedBody = compLink.GetComponent<Rigidbody>();
 				break;
 			}
 			

@@ -13,11 +13,12 @@ public class PlayerControllerLiveMouse : MonoBehaviour
 	private float movementX;
 	private float movementY;
 	private float movementZ;
-	public GameObject computerMouse;
 
 	private Rigidbody rb;
 
 	public bool isGrounded = false;
+
+	private int jmpCnt = 0;
 
 	void Start()
 	{
@@ -28,7 +29,11 @@ public class PlayerControllerLiveMouse : MonoBehaviour
 	{
 		Vector3 movement = new Vector3(movementX, movementZ, movementY);
 
-		if (isGrounded) rb.AddForce((new Vector3(movementX, movementZ, movementY)) * speed);
+		if (isGrounded || jmpCnt < 2)
+		{
+			rb.AddForce((new Vector3(movementX, movementZ, movementY)) * speed);
+			jmpCnt++;
+		}
 		else rb.AddForce((new Vector3(movementX, 0.0f, movementY)) * speed);
 
 		//transform.Translate((new Vector3(movementX, 0.0f, movementY)) * speed);
@@ -37,6 +42,7 @@ public class PlayerControllerLiveMouse : MonoBehaviour
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
+		jmpCnt = 0;
 	}
 
 	private void OnCollisionExit(Collision collision)
