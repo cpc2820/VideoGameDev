@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\PlayerControllerLiveMouse.cs" />
     <Compile Include="Assets\Scripts\RigidbodyCenterOfMass.cs" />
     <Compile Include="Assets\Scripts\RigidbodyCenterOfMassHandleEditor.cs" />
+    <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\SwitchCharacterScript.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
