@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 public class SwitchCharacterScript : MonoBehaviour {
 
 	// referenses to controlled game objects
-	public GameObject avatar1, avatar2, liveLink, liveUsb, compLink, compUsb;
+	public GameObject avatar1, avatar2, cable;
 	public Camera camera;
 	private CameraController cont;
+	private bool pickup = false;
 
 	// variable contains which avatar is on and active
 	int whichAvatarIsOn = 1;
@@ -24,7 +25,9 @@ public class SwitchCharacterScript : MonoBehaviour {
 
     private void Update()
     {
-        if (Keyboard.current.tKey.wasPressedThisFrame)
+		pickup = avatar1.GetComponent<PlayerControllerCompMouse>().pickup;
+
+        if (pickup && Keyboard.current.tKey.wasPressedThisFrame)
         {
 			SwitchAvatar();
 		}
@@ -48,11 +51,9 @@ public class SwitchCharacterScript : MonoBehaviour {
 				avatar1.gameObject.SetActive (false);
 				avatar2.gameObject.SetActive (true);
 
-				//avatar2.transform.rotation = avatar1.transform.rotation;
-				//avatar2.transform.position = avatar1.transform.position;
+                avatar2.transform.rotation = avatar1.transform.rotation;
+                avatar2.transform.position = avatar1.transform.position;
 
-				liveUsb.GetComponent<ConfigurableJoint>().connectedBody = liveLink.GetComponent<Rigidbody>();
-				compUsb.GetComponent<ConfigurableJoint>().connectedBody = null;
 				break;
 			// if the second avatar is on
 			case 2:
@@ -65,11 +66,10 @@ public class SwitchCharacterScript : MonoBehaviour {
 				avatar1.gameObject.SetActive (true);
 				avatar2.gameObject.SetActive (false);
 
-				//avatar1.transform.rotation = avatar2.transform.rotation;
-				//avatar1.transform.position = avatar2.transform.position;
+                avatar1.transform.rotation = avatar2.transform.rotation;
+                avatar1.transform.position
+					= new Vector3(avatar2.transform.position.x, avatar2.transform.position.y+1, avatar2.transform.position.z);
 
-				liveUsb.GetComponent<ConfigurableJoint>().connectedBody = null;
-				compUsb.GetComponent<ConfigurableJoint>().connectedBody = compLink.GetComponent<Rigidbody>();
 				break;
 			}
 			

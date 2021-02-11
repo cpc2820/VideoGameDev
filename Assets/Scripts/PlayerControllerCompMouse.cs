@@ -15,6 +15,8 @@ public class PlayerControllerCompMouse : MonoBehaviour
 	private float movementZ;
 
 	private Rigidbody rb;
+	public GameObject cable;
+	public bool pickup = false;
 
 
 	void Start()
@@ -27,8 +29,16 @@ public class PlayerControllerCompMouse : MonoBehaviour
 		Vector3 movement = new Vector3(movementX, movementZ, movementY);
 
 		rb.AddForce((new Vector3(movementX, 0.0f, movementY)) * speed);
+	}
 
-		//transform.Translate((new Vector3(movementX, 0.0f, movementY)) * speed);
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("PickUp"))
+		{
+			other.gameObject.SetActive(false);
+			pickup = true;
+			Object.Destroy(cable);
+		}
 	}
 
 	void OnMove(InputValue value)
