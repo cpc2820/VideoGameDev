@@ -85,7 +85,9 @@ public class DraggableObjectController : MonoBehaviour
     {
         if (distanceFromPlayer <= maxDistance && playerController.isDragging)
         {
-            handleRB.MovePosition((handleRB.transform.position + ((leftHandTransform.position + rightHandTransform.position) / 2.0f)) / 2.0f);
+            handleRB.MovePosition((leftHandTransform.position + rightHandTransform.position) / 2.0f);
+            //Vector3 newPosition = Vector3.Lerp(handleRB.transform.position, ((leftHandTransform.position + rightHandTransform.position) / 2.0f), 0.5f);
+            //handleRB.MovePosition(newPosition);
         }
     }
 }

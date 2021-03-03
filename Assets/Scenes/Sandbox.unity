@@ -1864,7 +1864,7 @@ PrefabInstance:
     - target: {fileID: 7509815381795854458, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
         type: 3}
       propertyPath: activeMass
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7509815381795854458, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
         type: 3}
@@ -1889,6 +1889,32 @@ PrefabInstance:
     - target: {fileID: 7509815381795854459, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
         type: 3}
       propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815381795854459, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729468, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6d3b0555646e3c04d88d42b0690fe107,
+        type: 2}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_XMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_YMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_ZMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
@@ -1918,6 +1944,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
         type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_LinearLimit.bounciness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729469, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 0
       objectReference: {fileID: 0}
@@ -1934,6 +1980,11 @@ PrefabInstance:
     - target: {fileID: 7509815383240729470, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
         type: 3}
       propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509815383240729470, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
+        type: 3}
+      propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7509815383250791356, guid: 7bdbb1cae0986ff40a8d4ffddbb9dfd1,
@@ -2077,8 +2128,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
         type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
+        type: 3}
       propertyPath: m_RenderingPath
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826982075600283054, guid: 9ad58693de94bca4aac764b64a009e9a,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad58693de94bca4aac764b64a009e9a, type: 3}
