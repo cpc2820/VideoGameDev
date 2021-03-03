@@ -70,8 +70,6 @@ public class DraggableObjectController : MonoBehaviour
                 handleRB.isKinematic = true;
                 draggableHandle.layer = 14;
                 draggableObject.layer = 14;
-                //draggableHandle.transform.position = (leftHandTransform.position + rightHandTransform.position) / 2.0f;
-                handleRB.MovePosition((leftHandTransform.position + rightHandTransform.position) / 2.0f);
                 return;
             }
 
@@ -81,6 +79,14 @@ public class DraggableObjectController : MonoBehaviour
         skinnedMeshRenderer.SetBlendShapeWeight(0, 0f);
         handleRB.isKinematic = false;
         handleRB.mass = idleMass;
+    }
+
+    void FixedUpdate()
+    {
+        if (distanceFromPlayer <= maxDistance && playerController.isDragging)
+        {
+            handleRB.MovePosition((handleRB.transform.position + ((leftHandTransform.position + rightHandTransform.position) / 2.0f)) / 2.0f);
+        }
     }
 }
 
