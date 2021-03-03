@@ -16,12 +16,12 @@ TagManager:
   - 
   - 
   - chain
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Terrain
+  - Character
+  - Tail
+  - Tail Collider
+  - Draggable
+  - Being Dragged
   - 
   - 
   - 
