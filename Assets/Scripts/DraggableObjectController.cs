@@ -17,8 +17,14 @@ public class DraggableObjectController : MonoBehaviour
     public IKHandPlacement ikScript;
     public Transform rightHandTransform;
     public Transform leftHandTransform;
+    public GameObject rightHand;
     public GameObject draggableHandle;
     public GameObject draggableObject;
+
+    public int blendShapeCount;
+    public GameObject body;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
+    public Mesh mesh;
     [Range(0, 10f)] public float maxDistance;
     
     
@@ -38,6 +44,9 @@ public class DraggableObjectController : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         anim = player.GetComponent<Animator>();
         ikScript = player.GetComponent<IKHandPlacement>();
+        skinnedMeshRenderer = body.GetComponent<SkinnedMeshRenderer>();
+        mesh = body.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        blendShapeCount = mesh.blendShapeCount;
     }
 
     void Update()
@@ -50,6 +59,7 @@ public class DraggableObjectController : MonoBehaviour
 
             if (playerController.isDragging)
             {
+                skinnedMeshRenderer.SetBlendShapeWeight(0, 99f);
                 draggableHandle.layer = 14;
                 draggableObject.layer = 14;
                 draggableHandle.transform.position = (leftHandTransform.position + rightHandTransform.position) / 2.0f;
@@ -59,6 +69,7 @@ public class DraggableObjectController : MonoBehaviour
             draggableHandle.layer = 13;
             draggableObject.layer = 13;
         }
+        skinnedMeshRenderer.SetBlendShapeWeight(0, 0f);
     }
 }
 
