@@ -26,8 +26,11 @@ public class DraggableObjectController : MonoBehaviour
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Mesh mesh;
     [Range(0, 10f)] public float maxDistance;
-    
-    
+
+    public Rigidbody draggableRB;
+    [Range(0, 10f)] public float massIdle;
+    [Range(0, 100f)] public float massActive;
+
     public bool isBeingDragged;
 
     public float distanceFromPlayer;
@@ -47,6 +50,7 @@ public class DraggableObjectController : MonoBehaviour
         skinnedMeshRenderer = body.GetComponent<SkinnedMeshRenderer>();
         mesh = body.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         blendShapeCount = mesh.blendShapeCount;
+        draggableRB = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -60,16 +64,17 @@ public class DraggableObjectController : MonoBehaviour
             if (playerController.isDragging)
             {
                 skinnedMeshRenderer.SetBlendShapeWeight(0, 99f);
+                draggableRB.mass = massActive;
                 draggableHandle.layer = 14;
                 draggableObject.layer = 14;
                 draggableHandle.transform.position = (leftHandTransform.position + rightHandTransform.position) / 2.0f;
                 return;
             }
-
-            draggableHandle.layer = 13;
-            draggableObject.layer = 13;
         }
         skinnedMeshRenderer.SetBlendShapeWeight(0, 0f);
+        draggableRB.mass = massIdle;
+        draggableHandle.layer = 13;
+        draggableObject.layer = 13;
     }
 }
 
