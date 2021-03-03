@@ -67,14 +67,14 @@ public class DraggableObjectController : MonoBehaviour
             {
                 skinnedMeshRenderer.SetBlendShapeWeight(0, 99f);
                 handleRB.mass = activeMass;
-                //draggableHandle.layer = 14;
-                //draggableObject.layer = 14;
+                draggableHandle.layer = 14;
+                draggableObject.layer = 14;
                 draggableHandle.transform.position = (leftHandTransform.position + rightHandTransform.position) / 2.0f;
                 return;
             }
 
-            //draggableHandle.layer = 13;
-            //draggableObject.layer = 13;
+            draggableHandle.layer = 13;
+            draggableObject.layer = 13;
         }
         skinnedMeshRenderer.SetBlendShapeWeight(0, 0f);
         handleRB.mass = idleMass;
