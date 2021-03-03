@@ -50,14 +50,14 @@ public class DraggableObjectController : MonoBehaviour
 
             if (playerController.isDragging)
             {
-                draggableHandle.layer = 13;
-                draggableObject.layer = 13;
+                draggableHandle.layer = 14;
+                draggableObject.layer = 14;
                 draggableHandle.transform.position = (leftHandTransform.position + rightHandTransform.position) / 2.0f;
                 return;
             }
 
-            draggableHandle.layer = 12;
-            draggableObject.layer = 12;
+            draggableHandle.layer = 13;
+            draggableObject.layer = 13;
         }
     }
 }
