@@ -35,20 +35,15 @@ public class IKHandPlacement : MonoBehaviour
         if (anim)
         {
             SetIKWeights();
-            HandIKHandler(AvatarIKGoal.LeftHand);
-            HandIKHandler(AvatarIKGoal.RightHand);
+            if (handTarget != null)
+            {
+                ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
+                anim.SetLayerWeight(1, ikStrength);
+                HandIKHandler(AvatarIKGoal.LeftHand);
+                HandIKHandler(AvatarIKGoal.RightHand);
+            }
         }
     }
-
-    void Update()
-    {
-        if (handTarget != null)
-        {
-            ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
-            anim.SetLayerWeight(1, ikStrength);
-        }
-    }
-
 
 
     /************************************************************
