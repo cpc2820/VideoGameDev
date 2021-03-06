@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     public float maxSpeed;
+    public float currSpeed;
     [Range(0, 30f)] public float runSpeed;
     [Range(0, 30f)] public float sprintSpeed;
     [Range(0, 30f)] public float dragSpeed;
@@ -51,7 +52,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection;
     private Vector3 lastMoveDirection;
-    public float currSpeed;
     private float airSpeed;
     private float jumpWindowCounter;
 //    private bool controllerConnected;
@@ -281,7 +281,7 @@ public class PlayerController : MonoBehaviour
             moveDirection.y += (Physics.gravity.y * fallSpeed * Time.deltaTime);
         }
 
-        if (velocityCurr.y <= 0 && !headBump)
+        if (controller.velocity.y <= 0 && !headBump && !wasGrounded)
         {
             moveDirection.y = velocityCurr.y;
             headBump = true;
@@ -465,7 +465,7 @@ public class PlayerController : MonoBehaviour
             newRotation = Quaternion.LookRotation(new Vector3(lastMoveDirection.x, tiltAmount, lastMoveDirection.z), upVector);
         }
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, 0.001f + controller.velocity.magnitude * Time.deltaTime / 2f);
     }
 
 
