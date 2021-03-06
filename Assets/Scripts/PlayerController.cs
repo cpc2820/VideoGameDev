@@ -281,7 +281,7 @@ public class PlayerController : MonoBehaviour
             moveDirection.y += (Physics.gravity.y * fallSpeed * Time.deltaTime);
         }
 
-        if (controller.velocity.y <= 0 && !headBump && !wasGrounded)
+        if (moveDirection.y <= 0 && !headBump && !wasGrounded)
         {
             moveDirection.y = velocityCurr.y;
             headBump = true;

@@ -1813,10 +1813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050a77462e778e04e8f4f3363eb81e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 70.6
-  thisParent: {fileID: 0}
-  thisRigidBody: {fileID: 0}
-  parentPositionLastFrame: {x: 0, y: 0, z: 0}
 --- !u!1 &1427983303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,10 +2768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050a77462e778e04e8f4f3363eb81e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 70.6
-  thisParent: {fileID: 0}
-  thisRigidBody: {fileID: 0}
-  parentPositionLastFrame: {x: 0, y: 0, z: 0}
 --- !u!1001 &1999414374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2902,6 +2894,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interpolate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241298, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241298, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241298, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241298, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241298, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241299, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323891872707241299, guid: bcdc6426de05fc74ca1819093b05aa21,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4323891872707241299, guid: bcdc6426de05fc74ca1819093b05aa21,
         type: 3}
