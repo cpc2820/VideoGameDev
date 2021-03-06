@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private float decelRatePerSec;
 
     [Header("Jumping")]
-    public float currrentJumpForce;
+    public float currentJumpForce;
     [Range(0, 30f)] public float jumpForce;
     [Range(0, 30f)] public float draggingJumpForce;
     [Range(0, 1f)] public float jumpWindowTime;
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         maxSpeed = runSpeed;
-        currrentJumpForce = jumpForce;
+        currentJumpForce = jumpForce;
         SetupAcceleration();
         //DetectControllers();
     }
@@ -256,7 +256,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown(inputJump))
         {
-            moveDirection.y = currrentJumpForce;
+            moveDirection.y = currentJumpForce;
             jumpWindowCounter = 0;
             squash_stretch_controller.GetComponent<Animator>().SetTrigger("stretch");
         }
@@ -281,11 +281,17 @@ public class PlayerController : MonoBehaviour
             moveDirection.y += (Physics.gravity.y * fallSpeed * Time.deltaTime);
         }
 
-        if (moveDirection.y <= 0 && !headBump && !wasGrounded)
+        /*
+        if (velocityCurr.y <= 0f && !headBump && !wasGrounded)
         {
-            moveDirection.y = velocityCurr.y;
             headBump = true;
         }
+
+        if (headBump)
+        {
+            moveDirection.y = -10f;
+        }
+        */
 
         if (wasGrounded && moveDirection.y < 0)
         {
@@ -311,7 +317,7 @@ public class PlayerController : MonoBehaviour
         if (jumpWindowCounter > 0 && Input.GetButtonDown(inputJump))
         {
             quickFall = false;
-            moveDirection.y = currrentJumpForce;
+            moveDirection.y = currentJumpForce;
             jumpWindowCounter = 0;
         }
     }
@@ -386,7 +392,7 @@ public class PlayerController : MonoBehaviour
     {
         isDragging = true;
         maxSpeed = dragSpeed;
-        currrentJumpForce = draggingJumpForce;
+        currentJumpForce = draggingJumpForce;
         accelRatePerSec = maxSpeed / timeZeroToMax;
         decelRatePerSec = -maxSpeed / timeMaxToZero;
     }
@@ -396,7 +402,7 @@ public class PlayerController : MonoBehaviour
     {
         isDragging = false;
         maxSpeed = runSpeed;
-        currrentJumpForce = jumpForce;
+        currentJumpForce = jumpForce;
         accelRatePerSec = maxSpeed / timeZeroToMax;
         decelRatePerSec = -maxSpeed / timeMaxToZero;
     }
