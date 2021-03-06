@@ -11,30 +11,29 @@ public class DraggableObjectController : MonoBehaviour
      * GLOBAL VARS
      * 
      ************************************************************/
+    [Header("Player")]
     public GameObject player;
-    public PlayerController playerController;
-    public Animator anim;
-    public IKHandPlacement ikScript;
-    public Transform rightHandTransform;
-    public Transform leftHandTransform;
-    public GameObject rightHand;
-    public GameObject draggableHandle;
-    public GameObject draggableObject;
+    private PlayerController playerController;
+    private Animator anim;
+    private IKHandPlacement ikScript;
 
-    public Rigidbody handleRB;
-    [Range(0, 10f)] public float idleMass;
-    [Range(0, 100f)] public float activeMass;
-
-    public int blendShapeCount;
+    [Header("Character Body")]
     public GameObject body;
-    public SkinnedMeshRenderer skinnedMeshRenderer;
-    public Mesh mesh;
-    [Range(0, 10f)] public float maxDistance;
-    
-    
-    public bool isBeingDragged;
+    private SkinnedMeshRenderer skinnedMeshRenderer;
+    private Mesh mesh;
+    private int blendShapeCount;
 
-    public float distanceFromPlayer;
+    [Header("Character Hand Anchor")]
+    public GameObject handAnchor;
+    private HandAnchor handAnchorScript;
+
+    [Header("Draggable Stuff")]
+    public GameObject draggableObject;
+    public GameObject draggableHandle;
+    private float maxPickupDistance;
+    [SerializeField] private float distanceFromPlayer;
+    [SerializeField] private bool isBeingDragged;
+    private Rigidbody handleRB;
 
 
 
@@ -50,45 +49,61 @@ public class DraggableObjectController : MonoBehaviour
         ikScript = player.GetComponent<IKHandPlacement>();
         skinnedMeshRenderer = body.GetComponent<SkinnedMeshRenderer>();
         mesh = body.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        handAnchorScript = handAnchor.GetComponent<HandAnchor>();
         blendShapeCount = mesh.blendShapeCount;
-
         handleRB = GetComponent<Rigidbody>();
+        maxPickupDistance = handAnchorScript.maxPickupDistance;
     }
 
     void Update()
     {
-        distanceFromPlayer = (player.transform.position - transform.position).magnitude;
+        distanceFromPlayer = (player.transform.position - gameObject.transform.position).magnitude;
 
-        if (distanceFromPlayer <= maxDistance)
+        if (distanceFromPlayer <= maxPickupDistance)
         {
             ikScript.setHandTarget(transform);
 
-            if (playerController.isDragging)
+            if (playerController.isDragging && !isBeingDragged && !handAnchorScript.isDragging)
             {
-                skinnedMeshRenderer.SetBlendShapeWeight(0, 99f);
-                handleRB.mass = activeMass;
-                handleRB.isKinematic = true;
-                draggableHandle.layer = 14;
-                draggableObject.layer = 14;
+                updateDragging(100f, true);
                 return;
             }
-
-            draggableHandle.layer = 13;
-            draggableObject.layer = 13;
         }
-        skinnedMeshRenderer.SetBlendShapeWeight(0, 0f);
-        handleRB.isKinematic = false;
-        handleRB.mass = idleMass;
+
+        if (isBeingDragged && !playerController.isDragging)
+        {
+            updateDragging(0f, false);
+        }
     }
 
     void FixedUpdate()
     {
-        if (distanceFromPlayer <= maxDistance && playerController.isDragging)
+        if (distanceFromPlayer <= maxPickupDistance &&
+            isBeingDragged &&
+            playerController.isDragging)
         {
-            handleRB.MovePosition((leftHandTransform.position + rightHandTransform.position) / 2.0f);
-            //Vector3 newPosition = Vector3.Lerp(handleRB.transform.position, ((leftHandTransform.position + rightHandTransform.position) / 2.0f), 0.5f);
-            //handleRB.MovePosition(newPosition);
+            handleRB.MovePosition(handAnchorScript.newPosition);
+            print("working");
+            setLayer(14);
+            return;
+        }
+        else 
+        {
+            setLayer(13);
         }
     }
-}
 
+    public void updateDragging(float blendShapeWeight, bool newBool)
+    {
+        skinnedMeshRenderer.SetBlendShapeWeight(0, blendShapeWeight);
+        handleRB.isKinematic =          newBool;
+        handAnchorScript.isDragging =   newBool;
+        isBeingDragged =                newBool;
+    }
+
+    public void setLayer(int newLayer)
+    {
+        draggableHandle.layer = newLayer;
+        draggableObject.layer = newLayer;
+    }
+}

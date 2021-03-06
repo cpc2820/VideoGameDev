@@ -15,19 +15,19 @@ public class HandAnchor : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
 
-    [Header("Update speeds")]
+    [Header("Variables")]
     [Range(0, 1f)] public float positionUpdateSpeed;
     [Range(0, 1f)] public float rotationUpdateSpeed;
+    [Range(0, 10f)] public float maxPickupDistance;
 
     [Header("Is the character holding something?")]
-    [SerializeField] private bool isHolding;
+    public bool isDragging;
 
     [Header("Transforms")]
-    [SerializeField] private Vector3 newPosition;
-    [SerializeField] private Vector3 lastPosition;
-
-    [SerializeField] private Quaternion newRotation;
-    [SerializeField] private Quaternion lastRotation;
+    public Vector3 newPosition;
+    private Vector3 lastPosition;
+    private Quaternion newRotation;
+    private Quaternion lastRotation;
 
 
     /**************************************************************************
