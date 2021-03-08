@@ -47,10 +47,11 @@ public class DraggableObjectController : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         anim = player.GetComponent<Animator>();
         ikScript = player.GetComponent<IKHandPlacement>();
+
         skinnedMeshRenderer = body.GetComponent<SkinnedMeshRenderer>();
         mesh = body.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+
         handAnchorScript = handAnchor.GetComponent<HandAnchor>();
-        blendShapeCount = mesh.blendShapeCount;
         handleRB = GetComponent<Rigidbody>();
         maxPickupDistance = handAnchorScript.maxPickupDistance;
     }
@@ -59,9 +60,20 @@ public class DraggableObjectController : MonoBehaviour
     {
         distanceFromPlayer = (player.transform.position - gameObject.transform.position).magnitude;
 
+
         if (distanceFromPlayer <= maxPickupDistance)
         {
-            ikScript.setHandTarget(transform);
+            if (distanceFromPlayer <= maxPickupDistance * 2.0f)
+            {
+                if (isBeingDragged)
+                {
+                    ikScript.setHandTarget(transform);
+                }
+                else if (!playerController.isDragging)
+                {
+                    ikScript.setHandTarget(transform);
+                }
+            }
 
             if (playerController.isDragging && !isBeingDragged && !handAnchorScript.isDragging)
             {
@@ -87,7 +99,7 @@ public class DraggableObjectController : MonoBehaviour
             setLayer(14);
             return;
         }
-        else 
+        else if (!playerController.isDragging)
         {
             setLayer(13);
         }

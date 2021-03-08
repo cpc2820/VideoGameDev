@@ -12,6 +12,7 @@ public class IKHandPlacement : MonoBehaviour
      * 
      ************************************************************/
     public GameObject player;
+    private PlayerController playerController;
     public Animator anim;
     public LayerMask layerMask;
     public Transform handTarget;
@@ -28,6 +29,7 @@ public class IKHandPlacement : MonoBehaviour
     void Start()
     {
         anim = player.GetComponent<Animator>();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     private void OnAnimatorIK(int layerIndex)
@@ -37,7 +39,13 @@ public class IKHandPlacement : MonoBehaviour
             SetIKWeights();
             if (handTarget != null)
             {
-                ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
+                if (playerController.isDragging)
+                {
+                    ikStrength = 1.0f;
+                } else
+                {
+                    ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
+                }
                 anim.SetLayerWeight(1, ikStrength);
                 HandIKHandler(AvatarIKGoal.LeftHand);
                 HandIKHandler(AvatarIKGoal.RightHand);
