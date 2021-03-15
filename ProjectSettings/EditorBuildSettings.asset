@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: fc65b8f431b24a540b72511270d5ca5b
+  - enabled: 1
+    path: Assets/Scenes/living_room.unity
+    guid: b9dc2e0ba9afd4ee6b6039de0c8d82bc
+  - enabled: 1
+    path: Assets/Scenes/office.unity
+    guid: bb754186fa67249f09935f96478bf264
   m_configObjects: {}
