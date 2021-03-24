@@ -32,6 +32,7 @@ public class DraggableObjectController : MonoBehaviour
     public GameObject draggableHandle;
     private float maxPickupDistance;
     [SerializeField] private float distanceFromPlayer;
+    [SerializeField] private float lastDistanceFromPlayer;
     [SerializeField] private bool isBeingDragged;
     private Rigidbody handleRB;
 
@@ -61,22 +62,19 @@ public class DraggableObjectController : MonoBehaviour
         distanceFromPlayer = (player.transform.position - gameObject.transform.position).magnitude;
 
 
-        if (distanceFromPlayer <= maxPickupDistance)
+        if (distanceFromPlayer <= maxPickupDistance * 2.0f)
         {
-            if (distanceFromPlayer <= maxPickupDistance * 2.0f)
+            if (isBeingDragged || !playerController.isDragging)
             {
-                if (isBeingDragged)
-                {
-                    ikScript.setHandTarget(transform);
-                }
-                else if (!playerController.isDragging)
-                {
-                    ikScript.setHandTarget(transform);
-                }
+                ikScript.setHandTarget(transform);
             }
 
-            if (playerController.isDragging && !isBeingDragged && !handAnchorScript.isDragging)
+            if (distanceFromPlayer <= maxPickupDistance &&
+                playerController.isDragging &&
+                !isBeingDragged &&
+                !handAnchorScript.isDragging)
             {
+                ikScript.setHandTarget(transform);
                 updateDragging(100f, true);
                 return;
             }
@@ -86,6 +84,8 @@ public class DraggableObjectController : MonoBehaviour
         {
             updateDragging(0f, false);
         }
+
+        lastDistanceFromPlayer = distanceFromPlayer;
     }
 
     void FixedUpdate()
