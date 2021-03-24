@@ -62,7 +62,7 @@ public class IKHandPlacement : MonoBehaviour
 
                 } else
                 {
-                    ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
+                    ikStrength = Mathf.Min(1.0f, 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator));
 
                 }
                 anim.SetLayerWeight(1, ikStrength);
