@@ -2279,7 +2279,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 618707eca72ff44f08a62e8391fcbd9b, type: 2}
+  - {fileID: 2100000, guid: e0659fa0cbc664491a5c9f08123b145d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2331,7 +2331,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 264921246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb809f58be4bb49c6bcd38c58249a64e, type: 3}
+  m_Script: {fileID: 11500000, guid: 76b33a94909a34c11a6bf857ead9c68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &273586593 stripped
@@ -2352,7 +2352,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b089113dbe6d4cf483b5fc0b5431457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  location: 0
+--- !u!114 &273586599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273586593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cb97de66e4145a8b6408f91a6363db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   hole1: {fileID: 273586593}
   hole2: {fileID: 1736904564}
 --- !u!1 &279140048 stripped
@@ -2861,9 +2872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afccb5dad991546549b00f6632169701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 310991179}
-  period: 15
-  hole2: {fileID: 1736904564}
 --- !u!135 &310991177
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12734,9 +12742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afccb5dad991546549b00f6632169701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 340406559}
-  period: 5
-  hole2: {fileID: 1736904564}
 --- !u!1 &350767435
 GameObject:
   m_ObjectHideFlags: 0
@@ -13016,7 +13021,7 @@ PrefabInstance:
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.86
+      value: 16.04
       objectReference: {fileID: 0}
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -13062,7 +13067,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7cc70f4b269e54234b06d1ea7005eb57, type: 2}
+      objectReference: {fileID: 2100000, guid: 3920ee028bf8e4ece82f2fc321dee342, type: 2}
     m_RemovedComponents:
     - {fileID: 8324708585610396509, guid: bb4db65e2fb034160859c50d9d59b342, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bb4db65e2fb034160859c50d9d59b342, type: 3}
@@ -14525,7 +14530,7 @@ Animator:
   m_GameObject: {fileID: 607133555}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c80b5acf5559c48ef91cea311db68d7c, type: 2}
+  m_Controller: {fileID: 9100000, guid: d0125274ba3d34c22a990a7169d6eca1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16745,9 +16750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afccb5dad991546549b00f6632169701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 917750749}
-  period: 10
-  hole2: {fileID: 1736904564}
 --- !u!135 &917750747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21737,7 +21739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7cc70f4b269e54234b06d1ea7005eb57, type: 2}
+      objectReference: {fileID: 2100000, guid: 3920ee028bf8e4ece82f2fc321dee342, type: 2}
     m_RemovedComponents:
     - {fileID: 8324708585610396509, guid: bb4db65e2fb034160859c50d9d59b342, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bb4db65e2fb034160859c50d9d59b342, type: 3}
@@ -23166,7 +23168,7 @@ Animator:
   m_GameObject: {fileID: 1051164829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 52d13dfa80e8243a28e92e32cc23dfac, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13cfb424410b44fa889e20bde6e6df78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -27101,6 +27103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 551181006142374900, guid: d95f63ce018a74aa9bee3c235abd0309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95f63ce018a74aa9bee3c235abd0309, type: 3}
 --- !u!1001 &1510935305
@@ -27568,7 +27575,6 @@ GameObject:
   - component: {fileID: 1545626032}
   - component: {fileID: 1545626031}
   - component: {fileID: 1545626030}
-  - component: {fileID: 1545626034}
   m_Layer: 0
   m_Name: Sink Water
   m_TagString: Untagged
@@ -27653,19 +27659,6 @@ Transform:
   m_Father: {fileID: 2066482001}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1545626034
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545626029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 750, y: 2.9999166, z: 750}
-  m_Center: {x: 0, y: 0.00011020899, z: -0.00012207031}
 --- !u!1 &1547170533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1854eaad31554f7199ab2ad65e419ca,
@@ -28608,7 +28601,7 @@ Animator:
   m_GameObject: {fileID: 1638508216}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b24cc350e1019496d8be608088727fb9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21ee443bbd5554b39917e6edda0e8296, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28737,9 +28730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afccb5dad991546549b00f6632169701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 1641335947}
-  period: 15
-  hole2: {fileID: 1736904564}
 --- !u!135 &1641335945
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34157,7 +34147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b089113dbe6d4cf483b5fc0b5431457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  location: 0
+--- !u!114 &1736904566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736904564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cb97de66e4145a8b6408f91a6363db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   hole1: {fileID: 273586593}
   hole2: {fileID: 1736904564}
 --- !u!1 &1752301021
@@ -34860,9 +34861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afccb5dad991546549b00f6632169701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 1792418875}
-  period: 5
-  hole2: {fileID: 1736904564}
 --- !u!135 &1792418873
 SphereCollider:
   m_ObjectHideFlags: 0
