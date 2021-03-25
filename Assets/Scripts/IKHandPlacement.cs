@@ -19,6 +19,9 @@ public class IKHandPlacement : MonoBehaviour
     public float ikStrength;
     [Range(1, 20f)] public float ikStrengthDenominator;
 
+    public ParticleSystem particleSystem;
+    [Range(0, 20f)] public float particleDistance;
+
 
 
     /************************************************************
@@ -32,6 +35,19 @@ public class IKHandPlacement : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
     }
 
+    void Update ()
+    {
+        if (!playerController.isDragging && !particleSystem.isPlaying && ikStrength >= particleDistance)
+        {
+            particleSystem.Play();
+            particleSystem.enableEmission = true;
+        } else if (playerController.isDragging && particleSystem.isPlaying || ikStrength < particleDistance)
+        {
+            particleSystem.Stop();
+            particleSystem.enableEmission = false;
+        }
+    }
+
     private void OnAnimatorIK(int layerIndex)
     {
         if (anim)
@@ -39,12 +55,15 @@ public class IKHandPlacement : MonoBehaviour
             SetIKWeights();
             if (handTarget != null)
             {
+                particleSystem.transform.position = handTarget.transform.position;
                 if (playerController.isDragging)
                 {
                     ikStrength = 1.0f;
+
                 } else
                 {
-                    ikStrength = 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator);
+                    ikStrength = Mathf.Min(1.0f, 1.0f / (Mathf.Pow((transform.position - handTarget.transform.position).magnitude, 1.5f) * ikStrengthDenominator));
+
                 }
                 anim.SetLayerWeight(1, ikStrength);
                 HandIKHandler(AvatarIKGoal.LeftHand);
