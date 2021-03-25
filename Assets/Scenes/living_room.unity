@@ -601,17 +601,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a0ccc0b22276c4bce85a30b8d4ea7278,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 331.66
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0ccc0b22276c4bce85a30b8d4ea7278,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 331.65997
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0ccc0b22276c4bce85a30b8d4ea7278,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 331.65997
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0ccc0b22276c4bce85a30b8d4ea7278,
         type: 3}
@@ -1118,7 +1118,7 @@ PrefabInstance:
     - target: {fileID: 3777148401822499457, guid: 538594507b9134a2eb38da26394444ac,
         type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3777148401822499457, guid: 538594507b9134a2eb38da26394444ac,
         type: 3}
@@ -1223,7 +1223,7 @@ PrefabInstance:
     - target: {fileID: 3777148402952395662, guid: 538594507b9134a2eb38da26394444ac,
         type: 3}
       propertyPath: m_Intensity
-      value: 2
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3777148402952395662, guid: 538594507b9134a2eb38da26394444ac,
         type: 3}
@@ -2218,6 +2218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: vent
       objectReference: {fileID: 0}
+    - target: {fileID: 7522694292740936644, guid: bb4db65e2fb034160859c50d9d59b342,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49c087e4201e6416eb7dd0589212ef02, type: 2}
     - target: {fileID: 8324708585610396509, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: location
@@ -10486,7 +10491,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bea8c3947783e4ee9a17db6edb60f26b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10541,6 +10546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f234f61c01a9d420aa7e4cbf5e3fa899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 0
 --- !u!1 &1959038405
 GameObject:
   m_ObjectHideFlags: 0

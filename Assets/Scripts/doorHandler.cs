@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class doorHandler : MonoBehaviour
 {
 
+    public bool location = false; //false = office, true = living room
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class doorHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Scenes/kitchen");
+            if (!location) SceneManager.LoadScene("Scenes/kitchen");
+			else SceneManager.LoadScene("Scenes/living_room");         
         }
     }
 }
