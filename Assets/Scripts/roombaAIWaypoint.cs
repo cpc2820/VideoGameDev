@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class roombaAIWaypoint : MonoBehaviour
 {
@@ -94,6 +95,14 @@ public class roombaAIWaypoint : MonoBehaviour
         else
         {
             currWaypoint = (currWaypoint + 1) % waypoints.Length;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Scenes/living_room");
         }
     }
 }
