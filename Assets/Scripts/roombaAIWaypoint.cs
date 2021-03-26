@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class roombaAIWaypoint : MonoBehaviour
 {
@@ -20,10 +21,15 @@ public class roombaAIWaypoint : MonoBehaviour
     public int viewDistance = 20;
     public int followTimeMax = 1000;
     public NavMeshHit hit;
+    public GameObject stateIndicator;
+    public float patrolSpeed;
+    public float chaseSpeed;
+    private Light lt;
     private int currFollowTime = 0;
     // Start is called before the first frame update
     void Start()
     {
+        lt = stateIndicator.GetComponent<Light>();
         currWaypoint = -1;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         aiState = AIState.Patrol;
@@ -49,7 +55,7 @@ public class roombaAIWaypoint : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Quaternion.AngleAxis(fieldOfViewAngle, Vector3.up) * Vector3.forward) * viewDistance, Color.magenta); //edge of view
             Debug.DrawRay(transform.position, transform.TransformDirection(Quaternion.AngleAxis(-fieldOfViewAngle, Vector3.up) * Vector3.forward) * viewDistance, Color.magenta); //edge of view
         }
-        if (angle < fieldOfViewAngle && targetDir.magnitude <= viewDistance) //player within distance and within angle
+        if (Mathf.Abs(angle) < fieldOfViewAngle && targetDir.magnitude <= viewDistance) //player within distance and within angle
         {
             //now check if raycast returns player
             if (!agent.Raycast(player.transform.position, out hit)) //agent.Raycast returns false if it has a clear line of sight between it and the player
@@ -60,12 +66,14 @@ public class roombaAIWaypoint : MonoBehaviour
         switch (aiState)
         {
             case AIState.Patrol:
+                lt.color = Color.green;
                 currFollowTime = 0;
-                agent.speed = 3.5f;
+                agent.speed = patrolSpeed;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
                 break;
             case AIState.Chase:
-                agent.speed = 8.0f;
+                lt.color = Color.red;
+                agent.speed = chaseSpeed;
                 agent.SetDestination(player.transform.position);
                 currFollowTime++;
                 if (currFollowTime >= followTimeMax)
@@ -89,6 +97,14 @@ public class roombaAIWaypoint : MonoBehaviour
         else
         {
             currWaypoint = (currWaypoint + 1) % waypoints.Length;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Scenes/living_room");
         }
     }
 }
