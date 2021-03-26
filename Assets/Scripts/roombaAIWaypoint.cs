@@ -22,6 +22,8 @@ public class roombaAIWaypoint : MonoBehaviour
     public int followTimeMax = 1000;
     public NavMeshHit hit;
     public GameObject stateIndicator;
+    public float patrolSpeed;
+    public float chaseSpeed;
     private Light lt;
     private int currFollowTime = 0;
     // Start is called before the first frame update
@@ -66,12 +68,12 @@ public class roombaAIWaypoint : MonoBehaviour
             case AIState.Patrol:
                 lt.color = Color.green;
                 currFollowTime = 0;
-                agent.speed = 3.5f;
+                agent.speed = patrolSpeed;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
                 break;
             case AIState.Chase:
                 lt.color = Color.red;
-                agent.speed = 8.0f;
+                agent.speed = chaseSpeed;
                 agent.SetDestination(player.transform.position);
                 currFollowTime++;
                 if (currFollowTime >= followTimeMax)
