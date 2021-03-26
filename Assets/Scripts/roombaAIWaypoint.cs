@@ -20,10 +20,13 @@ public class roombaAIWaypoint : MonoBehaviour
     public int viewDistance = 20;
     public int followTimeMax = 1000;
     public NavMeshHit hit;
+    public GameObject stateIndicator;
+    private Light lt;
     private int currFollowTime = 0;
     // Start is called before the first frame update
     void Start()
     {
+        lt = stateIndicator.GetComponent<Light>();
         currWaypoint = -1;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         aiState = AIState.Patrol;
@@ -60,11 +63,13 @@ public class roombaAIWaypoint : MonoBehaviour
         switch (aiState)
         {
             case AIState.Patrol:
+                lt.color = Color.green;
                 currFollowTime = 0;
                 agent.speed = 3.5f;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
                 break;
             case AIState.Chase:
+                lt.color = Color.red;
                 agent.speed = 8.0f;
                 agent.SetDestination(player.transform.position);
                 currFollowTime++;
