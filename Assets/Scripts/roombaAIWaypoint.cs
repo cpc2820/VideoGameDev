@@ -49,7 +49,7 @@ public class roombaAIWaypoint : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Quaternion.AngleAxis(fieldOfViewAngle, Vector3.up) * Vector3.forward) * viewDistance, Color.magenta); //edge of view
             Debug.DrawRay(transform.position, transform.TransformDirection(Quaternion.AngleAxis(-fieldOfViewAngle, Vector3.up) * Vector3.forward) * viewDistance, Color.magenta); //edge of view
         }
-        if (angle < fieldOfViewAngle && targetDir.magnitude <= viewDistance) //player within distance and within angle
+        if (Mathf.Abs(angle) < fieldOfViewAngle && targetDir.magnitude <= viewDistance) //player within distance and within angle
         {
             //now check if raycast returns player
             if (!agent.Raycast(player.transform.position, out hit)) //agent.Raycast returns false if it has a clear line of sight between it and the player
