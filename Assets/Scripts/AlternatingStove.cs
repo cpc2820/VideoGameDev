@@ -45,14 +45,30 @@ public class AlternatingStove : MonoBehaviour
             break;
 
             case StoveState.Middle:
-            
+            one.Stop();
+            two.Stop();
+            three.Stop();
             four.Play();
             five.Play();
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            } else {
+                nextState();
+            }
             break;
 
             case StoveState.Last:
             one.Play();
             two.Play();
+            four.Stop();
+            five.Stop();
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            } else {
+                nextState();
+            }
         
             break;
         }
@@ -66,14 +82,8 @@ public class AlternatingStove : MonoBehaviour
             state = StoveState.Last;
         } if (state == StoveState.Last) {
             state = StoveState.First;
-        }
-        timeRemaining = 5;    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.transform.position = hole2.transform.position - offset;
-        }
+        }   
     }
+
+
 }

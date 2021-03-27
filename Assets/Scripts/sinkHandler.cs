@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinState : MonoBehaviour
+public class sinkHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,8 @@ public class WinState : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Scenes/win_screen");
+            SceneManager.LoadScene("Scenes/kitchen");
+            
         }
     }
 }
