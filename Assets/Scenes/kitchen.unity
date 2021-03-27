@@ -1571,6 +1571,7 @@ GameObject:
   - component: {fileID: 202585055}
   - component: {fileID: 202585057}
   - component: {fileID: 202585056}
+  - component: {fileID: 202585058}
   m_Layer: 0
   m_Name: tabletop (1)
   m_TagString: Untagged
@@ -1639,6 +1640,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202585054}
   m_Mesh: {fileID: 4300000, guid: 0e0146a28c9ff004db1a9e81b928b4a9, type: 3}
+--- !u!65 &202585058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202585054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9777865, y: 102.7341, z: 59.940735}
+  m_Center: {x: -0.000015139585, y: -0.000015258793, z: 0.0000076294}
 --- !u!1 &214956579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,7 +2513,7 @@ Transform:
   m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &264921251
 MonoBehaviour:
@@ -7806,6 +7820,7 @@ GameObject:
   - component: {fileID: 313891459}
   - component: {fileID: 313891458}
   - component: {fileID: 313891462}
+  - component: {fileID: 313891463}
   m_Layer: 0
   m_Name: gas stove
   m_TagString: Untagged
@@ -7897,6 +7912,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4031e14c71c1a48298f3169feabbcc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  one: {fileID: 340406559}
+  two: {fileID: 1641335947}
+  three: {fileID: 310991179}
+  four: {fileID: 1792418875}
+  five: {fileID: 917750749}
+  hole2: {fileID: 1736904564}
+  timeRemaining: 5
+  offset: {x: 0, y: 0, z: 10}
+  state: 0
+--- !u!114 &313891463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313891457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41e8210305dc4388b09f130bbeb1da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   one: {fileID: 340406559}
@@ -25702,7 +25738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1215104111
 ParticleSystemRenderer:
@@ -31147,7 +31183,7 @@ Transform:
   m_LocalScale: {x: 2.821226, y: 0.17723165, z: 8.926073}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 39.661003, y: 0, z: 0}
 --- !u!65 &1301216568
 BoxCollider:
@@ -32950,6 +32986,7 @@ GameObject:
   - component: {fileID: 1545626032}
   - component: {fileID: 1545626031}
   - component: {fileID: 1545626030}
+  - component: {fileID: 1545626035}
   - component: {fileID: 1545626034}
   m_Layer: 0
   m_Name: Sink Water
@@ -33043,12 +33080,24 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545626029}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ebfb4988eb16add4784122504f75fe2f, type: 2}
+--- !u!114 &1545626035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545626029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ac18e2cb5574088a8616e1738bfb21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547170533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1854eaad31554f7199ab2ad65e419ca,
@@ -39177,6 +39226,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1854eaad31554f7199ab2ad65e419ca, type: 3}
+--- !u!1 &1673541778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 7d0701320ee303d439feed9498b8d336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1415853728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1673541780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673541778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9777873, y: 102.73412, z: 59.940727}
+  m_Center: {x: 0.00000011920377, y: -0.000026702888, z: 0.000015258793}
 --- !u!1 &1695071440
 GameObject:
   m_ObjectHideFlags: 0
@@ -47524,11 +47592,11 @@ Transform:
   - {fileID: 195665701}
   - {fileID: 361295735}
   - {fileID: 4641596}
-  - {fileID: 273586598}
-  - {fileID: 1736904567}
   - {fileID: 1301216567}
   - {fileID: 264921250}
   - {fileID: 1215104110}
+  - {fileID: 273586598}
+  - {fileID: 1736904567}
   m_Father: {fileID: 1911971725}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
