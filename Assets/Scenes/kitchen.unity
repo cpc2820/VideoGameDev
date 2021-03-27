@@ -380,7 +380,7 @@ Transform:
   m_LocalScale: {x: 19.428656, y: 30.723429, z: 12.285985}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &28094850
 GameObject:
@@ -2410,7 +2410,7 @@ Transform:
   m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &264921251
 MonoBehaviour:
@@ -2534,6 +2534,7 @@ Transform:
   - {fileID: 1415853729}
   - {fileID: 1296974418}
   - {fileID: 361690624}
+  - {fileID: 577557800}
   m_Father: {fileID: 2066482001}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7715,6 +7716,7 @@ GameObject:
   - component: {fileID: 313891460}
   - component: {fileID: 313891459}
   - component: {fileID: 313891458}
+  - component: {fileID: 313891462}
   m_Layer: 0
   m_Name: gas stove
   m_TagString: Untagged
@@ -7796,6 +7798,26 @@ Transform:
   m_Father: {fileID: 195665701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &313891462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313891457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4031e14c71c1a48298f3169feabbcc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  one: {fileID: 340406559}
+  two: {fileID: 1641335947}
+  three: {fileID: 310991179}
+  four: {fileID: 1792418875}
+  five: {fileID: 917750749}
+  hole2: {fileID: 1736904564}
+  timeRemaining: 5
+  state: 0
 --- !u!1 &315181427
 GameObject:
   m_ObjectHideFlags: 0
@@ -13093,7 +13115,7 @@ PrefabInstance:
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -13163,7 +13185,7 @@ PrefabInstance:
     - target: {fileID: 4450584710219531685, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_Name
-      value: vent
+      value: Mouse Hole One
       objectReference: {fileID: 0}
     - target: {fileID: 7522694292740936644, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -14648,8 +14670,8 @@ Transform:
   m_LocalPosition: {x: -4.6678715, y: -27.362707, z: -27.601969}
   m_LocalScale: {x: 18.95216, y: 17.367443, z: 0.6685968}
   m_Children: []
-  m_Father: {fileID: 2066482001}
-  m_RootOrder: 6
+  m_Father: {fileID: 290894879}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &595988940
 PrefabInstance:
@@ -14930,7 +14952,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612518227
 PrefabInstance:
@@ -21982,7 +22004,7 @@ PrefabInstance:
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -22052,7 +22074,7 @@ PrefabInstance:
     - target: {fileID: 4450584710219531685, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_Name
-      value: vent (1)
+      value: Mouse Hole Two
       objectReference: {fileID: 0}
     - target: {fileID: 7522694292740936644, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -23360,7 +23382,7 @@ GameObject:
   - component: {fileID: 1029158742}
   - component: {fileID: 1029158741}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Chair ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23439,7 +23461,7 @@ Transform:
   m_LocalScale: {x: 0.34800115, y: 1, z: 1.1777489}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 42.480003, y: 0, z: 0}
 --- !u!1 &1041728241
 GameObject:
@@ -23568,7 +23590,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062689183
 GameObject:
@@ -27976,7 +27998,7 @@ Transform:
   m_LocalScale: {x: 0.023281708, y: 0.014762874, z: 0.01775088}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547170533 stripped
 GameObject:
@@ -29001,7 +29023,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2066482001}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1641335942
 GameObject:
@@ -42624,7 +42646,6 @@ Transform:
   - {fileID: 457113085}
   - {fileID: 1171775388}
   - {fileID: 195665701}
-  - {fileID: 577557800}
   - {fileID: 1051164834}
   - {fileID: 1638508221}
   - {fileID: 607133560}
