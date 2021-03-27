@@ -9,11 +9,6 @@ public class AlternatingStove : MonoBehaviour
 	public ParticleSystem three;
 	public ParticleSystem four;
 	public ParticleSystem five;
-    private SphereCollider oneCollider;
-    private SphereCollider twoCollider;
-    private SphereCollider threeCollider;
-    private SphereCollider fourCollider;
-    private SphereCollider fiveCollider;
 
 	public GameObject hole2;
     public float timeRemaining = 5;
@@ -29,11 +24,6 @@ public class AlternatingStove : MonoBehaviour
     void Start()
     {
         state = StoveState.First;
-        oneCollider = one.GetComponent<SphereCollider>();
-        twoCollider = two.GetComponent<SphereCollider>();
-        threeCollider = one.GetComponent<SphereCollider>();
-        fourCollider = two.GetComponent<SphereCollider>();
-        fiveCollider = one.GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -42,19 +32,9 @@ public class AlternatingStove : MonoBehaviour
         switch(state) {
 
             case StoveState.First:
-            //setting emissions for particle systems
-            one.enableEmission = true;
-            two.enableEmission = false;
-            three.enableEmission = true;
-            four.enableEmission = false;
-            five.enableEmission = true;
-
-            //colliders for particle systems
-            oneCollider.enabled = true;
-            twoCollider.enabled = false;
-            threeCollider.enabled = true;
-            fourCollider.enabled = false;
-            fiveCollider.enabled = true;
+            one.Play();
+            two.Play();
+            three.Play();
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -65,45 +45,14 @@ public class AlternatingStove : MonoBehaviour
             break;
 
             case StoveState.Middle:
-            one.enableEmission = true;
-            two.enableEmission = false;
-            three.enableEmission = false;
-            four.enableEmission = true;
-            five.enableEmission = true;
-
-            //colliders for particle systems
-            oneCollider.enabled = true;
-            twoCollider.enabled = false;
-            threeCollider.enabled = false;
-            fourCollider.enabled = true;
-            fiveCollider.enabled = true;
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            } else {
-                nextState();
-            }
+            
+            four.Play();
+            five.Play();
             break;
 
             case StoveState.Last:
-            one.enableEmission = true;
-            two.enableEmission = true;
-            three.enableEmission = false;
-            four.enableEmission = true;
-            five.enableEmission = false;
-
-            //colliders for particle systems
-            oneCollider.enabled = true;
-            twoCollider.enabled = true;
-            threeCollider.enabled = false;
-            fourCollider.enabled = true;
-            fiveCollider.enabled = false;
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            } else {
-                nextState();
-            }
+            one.Play();
+            two.Play();
         
             break;
         }
@@ -113,22 +62,18 @@ public class AlternatingStove : MonoBehaviour
         //switch states 
         if (state == StoveState.First) {
             state = StoveState.Middle;
-        } else if (state == StoveState.Middle) {
+        } if (state == StoveState.Middle) {
             state = StoveState.Last;
-        } else if (state == StoveState.Last) {
+        } if (state == StoveState.Last) {
             state = StoveState.First;
         }
-        timeRemaining = 5;   
-    }
+        timeRemaining = 5;    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            
             other.gameObject.transform.position = hole2.transform.position - offset;
         }
     }
-
-
 }
