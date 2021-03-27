@@ -2389,7 +2389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: particleSystem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1215104112}
     - target: {fileID: 4983809262529016864, guid: c5038fed6f56cfe40abbde7f1cbf4088,
         type: 3}
       propertyPath: particleDistance
@@ -3141,20 +3141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41e8210305dc4388b09f130bbeb1da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 0}
-  two: {fileID: 0}
-  three: {fileID: 0}
-  four: {fileID: 0}
-  five: {fileID: 0}
-  oneCollider: {fileID: 0}
-  twoCollider: {fileID: 0}
-  threeCollider: {fileID: 0}
-  fourCollider: {fileID: 0}
-  fiveCollider: {fileID: 0}
-  hole2: {fileID: 1736904564}
-  timeRemaining: 5
-  offset: {x: 0, y: 0, z: 10}
-  state: 0
 --- !u!224 &325275413 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 551181006142374899, guid: d95f63ce018a74aa9bee3c235abd0309,
@@ -12196,14 +12182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1793940607}
-  flame2: {fileID: 837952010}
-  flame3: {fileID: 896745196}
-  flame4: {fileID: 1941047881}
-  flame5: {fileID: 457361777}
-  hole2: {fileID: 1736904564}
-  timeRemaining: 5
-  state: 0
 --- !u!1 &809297487
 GameObject:
   m_ObjectHideFlags: 0
@@ -35791,14 +35769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1793940607}
-  flame2: {fileID: 837952010}
-  flame3: {fileID: 896745196}
-  flame4: {fileID: 1941047881}
-  flame5: {fileID: 457361777}
-  hole2: {fileID: 1736904564}
-  timeRemaining: 5
-  state: 0
 --- !u!135 &1793940605
 SphereCollider:
   m_ObjectHideFlags: 0
