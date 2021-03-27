@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flameHandler : MonoBehaviour
+public class FlameHandler : MonoBehaviour
 {
     //gas stove flames
 	public ParticleSystem flame;
