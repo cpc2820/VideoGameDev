@@ -1553,10 +1553,10 @@ Transform:
   m_Children:
   - {fileID: 313891461}
   - {fileID: 340406560}
-  - {fileID: 1641335943}
-  - {fileID: 310991175}
   - {fileID: 1792418871}
   - {fileID: 917750745}
+  - {fileID: 1641335943}
+  - {fileID: 310991175}
   m_Father: {fileID: 2066482001}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2393,7 +2393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: particleSystem
       value: 
-      objectReference: {fileID: 1215104112}
+      objectReference: {fileID: 0}
     - target: {fileID: 4983809262529016864, guid: c5038fed6f56cfe40abbde7f1cbf4088,
         type: 3}
       propertyPath: particleDistance
@@ -3040,7 +3040,7 @@ GameObject:
   - component: {fileID: 310991177}
   - component: {fileID: 310991176}
   m_Layer: 0
-  m_Name: Particle System (2)
+  m_Name: flame 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3058,7 +3058,7 @@ Transform:
   m_LocalScale: {x: 0.5634703, y: 0.7779293, z: 0.25256845}
   m_Children: []
   m_Father: {fileID: 195665701}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &310991176
 MonoBehaviour:
@@ -7914,15 +7914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4031e14c71c1a48298f3169feabbcc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one: {fileID: 340406559}
-  two: {fileID: 1641335947}
-  three: {fileID: 310991179}
-  four: {fileID: 1792418875}
-  five: {fileID: 917750749}
-  hole2: {fileID: 1736904564}
-  timeRemaining: 5
-  offset: {x: 0, y: 0, z: 10}
-  state: 0
 --- !u!114 &313891463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7936,10 +7927,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   one: {fileID: 340406559}
-  two: {fileID: 1641335947}
-  three: {fileID: 310991179}
-  four: {fileID: 1792418875}
-  five: {fileID: 917750749}
+  two: {fileID: 1792418875}
+  three: {fileID: 917750749}
+  four: {fileID: 1641335947}
+  five: {fileID: 310991179}
   hole2: {fileID: 1736904564}
   timeRemaining: 5
   state: 0
@@ -8131,7 +8122,7 @@ GameObject:
   - component: {fileID: 340406557}
   - component: {fileID: 340406561}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: flame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13049,9 +13040,9 @@ Transform:
   m_LocalScale: {x: 0.2740833, y: 0.26891243, z: 0.17051671}
   m_Children:
   - {fileID: 1545626033}
-  - {fileID: 1051164834}
-  - {fileID: 1638508221}
-  - {fileID: 607133560}
+  - {fileID: 1631827471}
+  - {fileID: 541203355}
+  - {fileID: 1367112149}
   m_Father: {fileID: 2066482001}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13800,7 +13791,7 @@ PrefabInstance:
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -15178,6 +15169,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 533194550}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &541203354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541203355}
+  - component: {fileID: 541203356}
+  m_Layer: 0
+  m_Name: obstacle_two
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541203355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541203354}
+  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
+  m_LocalPosition: {x: 0.2874228, y: -18.174555, z: -0.17428277}
+  m_LocalScale: {x: 3.7186828, y: 5.8645287, z: 3.648526}
+  m_Children:
+  - {fileID: 1638508221}
+  m_Father: {fileID: 361295735}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &541203356
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541203354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a165082d727c4a9a818b78cd4c1eecd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &553047840
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,7 +15557,7 @@ GameObject:
   - component: {fileID: 607133557}
   - component: {fileID: 607133556}
   m_Layer: 0
-  m_Name: obstacle_three
+  m_Name: cube_three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15607,12 +15649,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607133555}
-  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
-  m_LocalPosition: {x: 0.2873831, y: 18.19417, z: -0.17430842}
-  m_LocalScale: {x: 14.874731, y: 23.458113, z: 13.737139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.780003, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 3.76512}
   m_Children: []
-  m_Father: {fileID: 361295735}
-  m_RootOrder: 3
+  m_Father: {fileID: 1367112149}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612518227
 PrefabInstance:
@@ -17634,7 +17676,7 @@ GameObject:
   - component: {fileID: 917750747}
   - component: {fileID: 917750746}
   m_Layer: 0
-  m_Name: Particle System (4)
+  m_Name: flame center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17652,7 +17694,7 @@ Transform:
   m_LocalScale: {x: 0.541707, y: 0.7478828, z: 0.24281332}
   m_Children: []
   m_Father: {fileID: 195665701}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &917750746
 MonoBehaviour:
@@ -22579,7 +22621,7 @@ PrefabInstance:
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4000123170818019125, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
@@ -23901,7 +23943,7 @@ GameObject:
   - component: {fileID: 1051164831}
   - component: {fileID: 1051164830}
   m_Layer: 0
-  m_Name: obstacle_one
+  m_Name: cube_one
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23993,12 +24035,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051164829}
-  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
-  m_LocalPosition: {x: 0.28741258, y: -18.174543, z: -0.17428277}
-  m_LocalScale: {x: 14.874731, y: 23.458113, z: 13.737139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.22264, y: -3.4702215, z: 1.0312281}
+  m_LocalScale: {x: 4, y: 4, z: 3.76512}
   m_Children: []
-  m_Father: {fileID: 361295735}
-  m_RootOrder: 1
+  m_Father: {fileID: 1631827471}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062689183
 GameObject:
@@ -31688,6 +31730,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1854eaad31554f7199ab2ad65e419ca, type: 3}
+--- !u!1 &1367112148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367112149}
+  - component: {fileID: 1367112150}
+  m_Layer: 0
+  m_Name: obstacle_three
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1367112149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367112148}
+  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
+  m_LocalPosition: {x: 0.28741586, y: -18.174555, z: -0.17428277}
+  m_LocalScale: {x: 3.7186828, y: 5.864528, z: 3.648526}
+  m_Children:
+  - {fileID: 607133560}
+  m_Father: {fileID: 361295735}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1367112150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367112148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35b4de398aa3c4e62945da4e493a1827, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1367150235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33964,6 +34057,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1630776381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1631827470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631827471}
+  - component: {fileID: 1631827472}
+  m_Layer: 0
+  m_Name: obstable_one
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631827471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631827470}
+  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
+  m_LocalPosition: {x: 4.0499287, y: -82.22007, z: 20.176958}
+  m_LocalScale: {x: 3.7186828, y: 5.864528, z: 3.648526}
+  m_Children:
+  - {fileID: 1051164834}
+  m_Father: {fileID: 361295735}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1631827472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631827470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b52d6f9ff84545aca2064ea251e8c35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1638006137
 GameObject:
   m_ObjectHideFlags: 0
@@ -34024,7 +34168,7 @@ GameObject:
   - component: {fileID: 1638508218}
   - component: {fileID: 1638508217}
   m_Layer: 0
-  m_Name: obstacle_two
+  m_Name: cube_two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34116,12 +34260,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638508216}
-  m_LocalRotation: {x: 0.5000001, y: -0.4999999, z: -0.49999967, w: 0.50000036}
-  m_LocalPosition: {x: 0.28739813, y: -0.362053, z: -0.1742953}
-  m_LocalScale: {x: 14.874731, y: 23.458113, z: 13.737139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.7900033, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 3.76512}
   m_Children: []
-  m_Father: {fileID: 361295735}
-  m_RootOrder: 2
+  m_Father: {fileID: 541203355}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1641335942
 GameObject:
@@ -34137,7 +34281,7 @@ GameObject:
   - component: {fileID: 1641335945}
   - component: {fileID: 1641335944}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: flame 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34155,7 +34299,7 @@ Transform:
   m_LocalScale: {x: 0.536114, y: 0.7401611, z: 0.24030633}
   m_Children: []
   m_Father: {fileID: 195665701}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1641335944
 MonoBehaviour:
@@ -40199,7 +40343,7 @@ GameObject:
   - component: {fileID: 1792418873}
   - component: {fileID: 1792418872}
   m_Layer: 0
-  m_Name: Particle System (3)
+  m_Name: flame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40217,7 +40361,7 @@ Transform:
   m_LocalScale: {x: 0.5802202, y: 0.8010543, z: 0.26007637}
   m_Children: []
   m_Father: {fileID: 195665701}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1792418872
 MonoBehaviour:

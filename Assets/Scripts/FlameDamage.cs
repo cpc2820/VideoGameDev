@@ -23,7 +23,6 @@ public class FlameDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-        	
             other.gameObject.transform.position = hole2.transform.position - offset;
         }
     }
