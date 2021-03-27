@@ -5100,7 +5100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 457361772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 877633f9a39eb4488b92812d62ae1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1793940607}
@@ -12188,14 +12188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 0}
-  flame2: {fileID: 0}
-  flame3: {fileID: 0}
-  flame4: {fileID: 0}
-  flame5: {fileID: 0}
-  hole2: {fileID: 0}
-  timeRemaining: 5
-  state: 0
 --- !u!1 &809297487
 GameObject:
   m_ObjectHideFlags: 0
@@ -12427,7 +12419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 837952005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 877633f9a39eb4488b92812d62ae1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1793940607}
@@ -17650,7 +17642,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 896745191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 877633f9a39eb4488b92812d62ae1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1793940607}
@@ -35782,7 +35774,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1793940602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 877633f9a39eb4488b92812d62ae1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1793940607}
@@ -42107,7 +42099,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941047876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcad9bf91344963b77c5b4aa4d7ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 877633f9a39eb4488b92812d62ae1bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 1793940607}
