@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
         maxSpeed = runSpeed;
         currentJumpForce = jumpForce;
         SetupAcceleration();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         //DetectControllers();
     }
 
