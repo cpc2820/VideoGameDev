@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject playerModel;
     public Transform pivot;
+
+    public TextMeshProUGUI countText;
+    private int count;
 
     [Header("Movement")]
     public float maxSpeed;
@@ -79,6 +83,7 @@ public class PlayerController : MonoBehaviour
         SetupAcceleration();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        count = 0;
         //DetectControllers();
     }
 
@@ -487,5 +492,23 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Vertical Velocity", controller.velocity.y);
         anim.SetFloat("Speed", controller.velocity.magnitude);
         anim.SetBool("isDragging", isDragging);
+    }
+
+    /************************************************************
+     * Collect Collectables
+     ************************************************************/
+    void OnTriggerEnter(Collider other)
+    {
+        // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+
+            // Add one to the score variable 'count'
+            count = count + 1;
+
+            // Run the 'SetCountText()' function (see below)
+            countText.text = "Count: " + count.ToString();
+        }
     }
 }
