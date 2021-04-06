@@ -3669,6 +3669,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 296702908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &768326981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768326978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82466f7a296942ce94bcc8c3845c545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collision_sound: {fileID: 0}
 --- !u!54 &768326983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4842,6 +4855,19 @@ CapsuleCollider:
   m_Height: 0.32075843
   m_Direction: 1
   m_Center: {x: 0.0017070532, y: 0.15712662, z: 0.002489555}
+--- !u!114 &1211640522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211640519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82466f7a296942ce94bcc8c3845c545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collision_sound: {fileID: 0}
 --- !u!54 &1211640525
 Rigidbody:
   m_ObjectHideFlags: 0
