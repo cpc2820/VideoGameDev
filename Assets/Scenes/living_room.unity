@@ -7675,13 +7675,13 @@ MonoBehaviour:
   currWaypoint: 0
   agent: {fileID: 0}
   player: {fileID: 162052968}
-  fieldOfViewAngle: 15
+  fieldOfViewAngle: 30
   showRoombaViews: 1
-  viewDistance: 20
+  viewDistance: 40
   followTimeMax: 1000
   stateIndicator: {fileID: 110245167}
-  patrolSpeed: 3.5
-  chaseSpeed: 8
+  patrolSpeed: 6
+  chaseSpeed: 12
 --- !u!135 &1745792337
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7703,7 +7703,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745792332}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
