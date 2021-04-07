@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject playerModel;
     public Transform pivot;
+    public GameObject vent;
 
     public TextMeshProUGUI countText;
-    private int count;
+    public int count;
 
     [Header("Movement")]
     public float maxSpeed;
@@ -501,8 +502,9 @@ public class PlayerController : MonoBehaviour
      ************************************************************/
     void SetCountText()
     {
+    
         // Run the 'SetCountText()' function (see below)
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
 
     }
 
