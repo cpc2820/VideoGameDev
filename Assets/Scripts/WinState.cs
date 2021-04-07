@@ -22,6 +22,8 @@ public class WinState : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Scenes/win_screen");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
