@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class PlayerController : MonoBehaviour
 {
 
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         count = 0;
+        SetCountText();
         //DetectControllers();
     }
 
@@ -497,6 +499,13 @@ public class PlayerController : MonoBehaviour
     /************************************************************
      * Collect Collectables
      ************************************************************/
+    void SetCountText()
+    {
+        // Run the 'SetCountText()' function (see below)
+        countText.text = "Count: " + count.ToString();
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
         // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
@@ -507,8 +516,9 @@ public class PlayerController : MonoBehaviour
             // Add one to the score variable 'count'
             count = count + 1;
 
-            // Run the 'SetCountText()' function (see below)
-            countText.text = "Count: " + count.ToString();
+            SetCountText();
+
         }
     }
+ 
 }
