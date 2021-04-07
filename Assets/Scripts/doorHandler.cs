@@ -7,6 +7,8 @@ public class doorHandler : MonoBehaviour
 {
 
     public bool location = false; //false = office, true = living room
+    public GameObject player;
+    public int indicator_count;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class doorHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && player.GetComponent<PlayerController>().count == indicator_count)
         {
             if (!location) SceneManager.LoadScene("Scenes/kitchen");
 			else SceneManager.LoadScene("Scenes/living_room");         
