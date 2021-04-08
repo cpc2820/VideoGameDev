@@ -21,7 +21,7 @@ public class sinkHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Scenes/kitchen");
+            SceneManager.LoadScene("Scenes/new_kitchen");
             
         }
     }
