@@ -41,8 +41,6 @@ public class FlameHandler : MonoBehaviour
 
     public int maxHealth = 3;
     public int currentHealth;
-
-    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +52,6 @@ public class FlameHandler : MonoBehaviour
         flameC6 = flame6.GetComponent<Collider>();
 
         currentHealth = maxHealth;
-        healthBar.setMaxHealth(maxHealth);
     }
 
     void Update()
@@ -199,6 +196,5 @@ public class FlameHandler : MonoBehaviour
 
     void TakeDamage(int damage) {
         currentHealth -= damage;
-        healthBar.setHealth(currentHealth);
     }
 }
