@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerModel;
     public Transform pivot;
     public GameObject vent;
+    public bool vent_door; //false = vent, true = door
 
     public TextMeshProUGUI countText;
     public int count;
@@ -504,8 +505,8 @@ public class PlayerController : MonoBehaviour
     {
     
         // Run the 'SetCountText()' function (see below)
-        countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
-
+        if (!vent_door) countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
+        else countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
     }
 
     void OnTriggerEnter(Collider other)
