@@ -41,8 +41,6 @@ public class FlameHandler : MonoBehaviour
 
     public int maxHealth = 3;
     public int currentHealth;
-
-    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +52,6 @@ public class FlameHandler : MonoBehaviour
         flameC6 = flame6.GetComponent<Collider>();
 
         currentHealth = maxHealth;
-        healthBar.setMaxHealth(maxHealth);
     }
 
     void Update()
@@ -65,19 +62,19 @@ public class FlameHandler : MonoBehaviour
             //enabling emission for particle systems 
             flame.enableEmission = false;
             flame2.enableEmission = true;
-            flame3.enableEmission = true;
+            flame3.enableEmission = false;
             flame4.enableEmission = true;
-            flame5.enableEmission = false;
-            flame6.enableEmission = true;
+            flame5.enableEmission = true;
+            flame6.enableEmission = false;
       
 
             //colliders for particle systems
             flameC.enabled = false;
             flameC2.enabled = true;
-            flameC3.enabled = true;
+            flameC3.enabled = false;
             flameC4.enabled = true;
-            flameC5.enabled = false;
-            flameC6.enabled = true;
+            flameC5.enabled = true;
+            flameC6.enabled = false;
 
             //state change countdown
             if (timeRemaining > 0)
@@ -90,32 +87,6 @@ public class FlameHandler : MonoBehaviour
             break;
 
             case StoveState.Second:
-            //enabling emission for particle systems 
-            flame.enableEmission = false;
-            flame2.enableEmission = true;
-            flame3.enableEmission = true;
-            flame4.enableEmission = false;
-            flame5.enableEmission = true;
-            flame6.enableEmission = true;
-
-            //enable collides
-            flameC.enabled = false;
-            flameC2.enabled = true;
-            flameC3.enabled = true;
-            flameC4.enabled = false;
-            flameC5.enabled = true;
-            flameC6.enabled = true;
-
-            //state change countdown
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            } else {
-                nextState();
-            }
-            break;
-
-            case StoveState.Third:
             //enabling emission for particle systems 
             flame.enableEmission = true;
             flame2.enableEmission = false;
@@ -141,6 +112,32 @@ public class FlameHandler : MonoBehaviour
             }
             break;
 
+            case StoveState.Third:
+            //enabling emission for particle systems 
+            flame.enableEmission = false;
+            flame2.enableEmission = true;
+            flame3.enableEmission = true;
+            flame4.enableEmission = false;
+            flame5.enableEmission = true;
+            flame6.enableEmission = false;
+
+            //enable collides
+            flameC.enabled = false;
+            flameC2.enabled = true;
+            flameC3.enabled = true;
+            flameC4.enabled = false;
+            flameC5.enabled = true;
+            flameC6.enabled = false;
+
+            //state change countdown
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            } else {
+                nextState();
+            }
+            break;
+
             case StoveState.Four:
             //enabling emission for particle systems 
             flame.enableEmission = true;
@@ -148,7 +145,7 @@ public class FlameHandler : MonoBehaviour
             flame3.enableEmission = false;
             flame4.enableEmission = true;
             flame5.enableEmission = false;
-            flame6.enableEmission = true;
+            flame6.enableEmission = false;
 
             //enable collides
             flameC.enabled = true;
@@ -156,7 +153,7 @@ public class FlameHandler : MonoBehaviour
             flameC3.enabled = false;
             flameC4.enabled = true;
             flameC5.enabled = false;
-            flameC6.enabled = true;
+            flameC6.enabled = false;
 
             //state change countdown
             if (timeRemaining > 0)
@@ -199,6 +196,5 @@ public class FlameHandler : MonoBehaviour
 
     void TakeDamage(int damage) {
         currentHealth -= damage;
-        healthBar.setHealth(currentHealth);
     }
 }
