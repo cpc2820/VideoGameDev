@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 acceleration;
 
     public Transform squash_stretch_controller;
+    public GameObject cage;
     #endregion
 
 
@@ -507,6 +508,11 @@ public class PlayerController : MonoBehaviour
         // Run the 'SetCountText()' function (see below)
         if (!vent_door) countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
         else countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
+
+        if (count == vent.GetComponent<doorHandler>().indicator_count)
+        {
+            cage.SetActive(false);
+        }
     }
 
     void OnTriggerEnter(Collider other)
