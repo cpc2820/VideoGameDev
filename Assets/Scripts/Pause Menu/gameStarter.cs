@@ -19,7 +19,8 @@ public class gameStarter : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("office");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
