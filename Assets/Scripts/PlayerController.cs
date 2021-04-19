@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI countText;
     public int count;
+    public AudioClip collectsound;
 
     [Header("Movement")]
     public float maxSpeed;
@@ -523,6 +524,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
 
             // Add one to the score variable 'count'
+            AudioSource.PlayClipAtPoint(collectsound, transform.position);
             count = count + 1;
 
             SetCountText();

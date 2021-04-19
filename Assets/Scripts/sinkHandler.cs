@@ -27,8 +27,10 @@ public class sinkHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.transform.position = hole2.transform.position - offset;
-            
+            //other.gameObject.transform.position = hole2.transform.position - offset;
+            SceneManager.LoadScene("Scenes/kitchen");
+
         }
     }
+
 }
