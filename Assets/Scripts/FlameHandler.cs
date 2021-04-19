@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlameHandler : MonoBehaviour
 {
@@ -185,11 +186,13 @@ public class FlameHandler : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (currentHealth == 0) {
-                other.gameObject.transform.position = hole2.transform.position - offset;
+                //other.gameObject.transform.position = hole2.transform.position - offset;
+                SceneManager.LoadScene("Scenes/kitchen");
                 currentHealth = maxHealth;
             } else {
                 TakeDamage(1);
-                other.gameObject.transform.position = hole2.transform.position - offset;
+                SceneManager.LoadScene("Scenes/kitchen");
+                //other.gameObject.transform.position = hole2.transform.position - offset;
             }
         }
     }
