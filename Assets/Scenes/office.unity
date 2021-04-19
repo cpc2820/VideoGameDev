@@ -3863,6 +3863,11 @@ PrefabInstance:
       objectReference: {fileID: 1804657745}
     - target: {fileID: 8324708585610396509, guid: bb4db65e2fb034160859c50d9d59b342,
         type: 3}
+      propertyPath: winsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d33b70c352264fcdb4c1852be18fdd1, type: 3}
+    - target: {fileID: 8324708585610396509, guid: bb4db65e2fb034160859c50d9d59b342,
+        type: 3}
       propertyPath: indicator_count
       value: 7
       objectReference: {fileID: 0}

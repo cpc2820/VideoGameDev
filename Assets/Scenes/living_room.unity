@@ -14507,6 +14507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f234f61c01a9d420aa7e4cbf5e3fa899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winsound: {fileID: 8300000, guid: 9d33b70c352264fcdb4c1852be18fdd1, type: 3}
   location: 0
   player: {fileID: 162052968}
   indicator_count: 5

@@ -32749,6 +32749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b33a94909a34c11a6bf857ead9c68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winsound: {fileID: 8300000, guid: 9d33b70c352264fcdb4c1852be18fdd1, type: 3}
 --- !u!65 &1615552930
 BoxCollider:
   m_ObjectHideFlags: 0
