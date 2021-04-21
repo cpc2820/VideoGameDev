@@ -104,7 +104,15 @@ public class roombaAIWaypoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Scenes/living_room");
+            
+            if (SceneManager.GetSceneByName("living_room").isLoaded)
+            {
+                SceneManager.LoadScene("Scenes/living_room");
+            }
+            else
+            {
+                SceneManager.LoadScene("Scenes/kitchen");
+            }
         }
     }
 }
