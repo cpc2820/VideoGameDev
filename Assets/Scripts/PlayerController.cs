@@ -505,15 +505,19 @@ public class PlayerController : MonoBehaviour
      ************************************************************/
     void SetCountText()
     {
-    
-        // Run the 'SetCountText()' function (see below)
-        if (!vent_door) countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
-        else countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
 
-        if (count == vent.GetComponent<doorHandler>().indicator_count)
+        // Run the 'SetCountText()' function (see below)
+        if (!vent_door) countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<ventHandler>().indicator_count;
+        else
         {
-            cage.SetActive(false);
+            countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
+            if (count == vent.GetComponent<doorHandler>().indicator_count)
+            {
+                cage.SetActive(false);
+            }
         }
+
+        
     }
 
     void OnTriggerEnter(Collider other)
