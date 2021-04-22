@@ -9060,8 +9060,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 546039720}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.6
-  m_Speed: 3.5
+  m_Radius: 1.6
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9069,7 +9069,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.65
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -9105,7 +9105,7 @@ MonoBehaviour:
   followTimeMax: 1000
   stateIndicator: {fileID: 852975339}
   patrolSpeed: 6
-  chaseSpeed: 12
+  chaseSpeed: 10
 --- !u!135 &546039726
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45745,7 +45745,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 9023955764063960635, guid: a80a9f353952a4e3082a807633514443, type: 3}
 --- !u!1001 &2064545975
