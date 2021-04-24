@@ -525,10 +525,11 @@ public class PlayerController : MonoBehaviour
         // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
         if (other.gameObject.CompareTag("PickUp"))
         {
+            AudioSource.PlayClipAtPoint(collectsound, transform.position);
+
             other.gameObject.SetActive(false);
 
             // Add one to the score variable 'count'
-            AudioSource.PlayClipAtPoint(collectsound, transform.position);
             count = count + 1;
 
             SetCountText();
