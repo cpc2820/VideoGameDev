@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI countText;
     public int count;
+    public AudioClip collectsound;
 
     [Header("Movement")]
     public float maxSpeed;
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 acceleration;
 
     public Transform squash_stretch_controller;
+    public GameObject cage;
     #endregion
 
 
@@ -503,10 +505,19 @@ public class PlayerController : MonoBehaviour
      ************************************************************/
     void SetCountText()
     {
-    
+
         // Run the 'SetCountText()' function (see below)
-        if (!vent_door) countText.text = "Count: " + count.ToString()+"/"+ vent.GetComponent<ventHandler>().indicator_count;
-        else countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
+        if (!vent_door) countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<ventHandler>().indicator_count;
+        else
+        {
+            countText.text = "Count: " + count.ToString() + "/" + vent.GetComponent<doorHandler>().indicator_count;
+            if (count == vent.GetComponent<doorHandler>().indicator_count)
+            {
+                cage.SetActive(false);
+            }
+        }
+
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -514,6 +525,8 @@ public class PlayerController : MonoBehaviour
         // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
         if (other.gameObject.CompareTag("PickUp"))
         {
+            AudioSource.PlayClipAtPoint(collectsound, transform.position);
+
             other.gameObject.SetActive(false);
 
             // Add one to the score variable 'count'

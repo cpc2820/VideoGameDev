@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gameStarter : MonoBehaviour
 {
+    public bool is_start = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,15 @@ public class gameStarter : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("office");
+        if (!is_start)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        } else
+        {
+            SceneManager.LoadScene("office");
+        }
+ 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
