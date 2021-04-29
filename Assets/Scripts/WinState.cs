@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WinState : MonoBehaviour
 {
+    private float delayTime = 1f;
     public AudioClip winsound;
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,14 @@ public class WinState : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             AudioSource.PlayClipAtPoint(winsound, transform.position);
-            SceneManager.LoadScene("Scenes/win_screen");
+            Invoke("DelayedAction", delayTime);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    void DelayedAction()
+    {
+        SceneManager.LoadScene("Scenes/win_screen");
     }
 }
